@@ -82,6 +82,30 @@ textarea {
     resize: vertical;
 }
 
+/*!*number inputs*!*/
+/*input[type="number"] {*/
+    /*width:50px; height:30px;*/
+    /*text-align:center;*/
+    /*margin:3px;*/
+    /*float:left;}*/
+
+/*select and equals elements*/
+select, p, .equals {
+    margin:3px;
+    float:left;}
+
+/*!*output element*!*/
+/*output {*/
+    /*display:block;*/
+    /*border:1px solid #333333;*/
+    /*border-radius:5px;*/
+    /*min-width:25px; height:25px;*/
+    /*margin:3px; padding:2px;*/
+    /*text-align:center;*/
+    /*background:#000000;*/
+    /*color:#ffffff;*/
+    /*float:left; }*/
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */

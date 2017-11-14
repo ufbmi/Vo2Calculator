@@ -13,6 +13,11 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional Bootstrap theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -20,12 +25,95 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <center>
+            <h1>Welcome to VO2max</h1>
+        </center>
+        <div class="col-lg-12 col-md-12">
+            <form id="calc" oninput="updateOutput()">
+                <!--input and output elements-->
+                <div class="col-lg-6 col-md-6">
+                    <div>
+                        <label>Metric System</label>
+                        <select name="system">
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Height</label>
+                        <input name="h" type="number" value="0" />
+                        <label>"Meters"</label>
+                    </div>
+                    <div>
+                        <label>Weight</label>
+                        <input name="w" type="number" value="0" />
+                        <label>"Kilograms"</label>
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input name="a" type="number" value="0" />
+                        <label>"Years"</label>
+                    </div>
+                    <div>
+                        <label>Sex</label>
+                        <select name="sex" onchange="updateSex()">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                        <label>1 for men or 0 for women</label>
+                    </div>
+                    <div>
+                        <label>P1</label>
+                        <input name="p1" type="number" value="0" />
+                        <label>"Heart rate at rest"</label>
+                    </div>
+                    <div>
+                        <label>P2</label>
+                        <input name="p2" type="number" value="0" />
+                        <label>"Heart rate immediately at the end of the Ruffier test"</label>
+                    </div>
+                    <div>
+                        <label>P3</label>
+                        <input name="p3" type="number" value="0" />
+                        <label>"Heart rate one minute after"</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <!--Modave's formula -->
+                    <h2>Formula</h2>
+                    <h4>
+                        <p>VO2max</p>
+                        <div class="equals"> = </div>
+                        <p>[3.0143 + 1.1585 * </p>
+                        <p id="sex"><span style="color: blue"> sex</span></p>
+                        <p> - 0.0268 * (</p>
+                        <p id="p1"><span style="color: blue">P1</span></p>
+                        <p>/</p>
+                        <p id="height"><span style="color: blue">height</span></p>
+                        <p>) +118.7611 * ((</p>
+                        <p id="p2"><span style="color: blue">P2</span></p>
+                        <p> - </p>
+                        <p id="p3"><span style="color: blue">P3</span></p>
+                        <p>)/</p>
+                        <p id="age"><span style="color: blue">age</span></p>
+                        <p>^3)]/</p>
+                        <p id="weight"><span style="color: blue">weight </span></p>
+                        <p> * 1000</p>
+                    </h4>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p class="equals"> = </p>
+                    <output name="z" for="h w a s p1 p2 p3">0</output>
+                </div>
+                <button onclick="calcVO2max()">Start Ruffier</button>
+            </form>
+        </div>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
