@@ -22,24 +22,33 @@ function updateSystemType() {
     }
 }
 
-//get all numbers
-var height = parseInt(form.elements["h"].value);
-var weight = parseInt(form.elements["w"].value);
-var age = parseInt(form.elements["a"].value);
-var p1 = parseInt(form.elements["p1"].value);
-var p2 = parseInt(form.elements["p2"].value);
-var p3 = parseInt(form.elements["p3"].value);
+
 
 
 // getting sex value
 var sexValue = parseInt(form.elements["sex"].value);
 
 function calcVO2max() {
+    //get all numbers
+    var height = parseInt(form.elements["h"].value);
+    var weight = parseInt(form.elements["w"].value);
+    var age = parseInt(form.elements["a"].value);
+    var p1 = parseInt(form.elements["p1"].value);
+    var p2 = parseInt(form.elements["p2"].value);
+    var p3 = parseInt(form.elements["p3"].value);
+    
     if (systemValue == 0) {
         // Metric System was selected
+        console.log("height " + height);
+        console.log("weight " + weight);
+        console.log("age " + age);
+
+
         console.log("Metric System was selected");
+
         // formula
         var result = [3.0143 + 1.1585 * sexValue - 0.0268 * (p1/height) +118.7611 * ((p2 - p3)/age^3)]/weight * 1000;
+
         document.getElementById("result").innerHTML = result.toString();
 
         console.log("this is result " + result.toString());
@@ -47,12 +56,6 @@ function calcVO2max() {
     else {
         // Imperial System was selected
         console.log("Imperial System was selected");
-
-        // formula
-        var result = [3.0143 + 1.1585 * sexValue - 0.0268 * (p1/height) +118.7611 * ((p2 - p3)/age^3)]/weight * 1000;
-        document.getElementById("result").innerHTML = result.toString();
-
-        console.log("this is result " + result.toString());
     }
 }
 
