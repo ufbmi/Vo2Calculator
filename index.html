@@ -32,73 +32,138 @@
             <form id="calc" oninput="updateOutput()">
                 <!--input and output elements-->
                 <div class="col-lg-12 col-md-12">
-                    <div>
-                        <label id="systemType">Metric System</label>
-                        <select name="system" onchange="updateSystemType()">
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
+                    <div class="col-lg-8 col-md-8">
+                        <div>
+                            <label id="systemType">Metric System</label>
+                            <select class="selectors" name="system" onchange="updateSystemType()">
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Height</label>
+                            <input class="inputs" name="h" type="number" value="0" />
+                            <label id="altura">"Meters"</label>
+                        </div>
+                        <div>
+                            <label>Weight</label>
+                            <input class="inputs" name="w" type="number" value="0" />
+                            <label id="peso">"Kilograms"</label>
+                        </div>
+                        <div>
+                            <label>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input class="inputs" name="a" type="number" value="0" />
+                            <label>"Years"</label>
+                        </div>
+                        <div>
+                            <label>Sex</label>
+                            <select class="selectors" name="sex">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                            <label>1 for men or 0 for women</label>
+                        </div>
+                        <div>
+                            <label>P1</label>
+                            <input class="inputs" name="p1" type="number" value="0" />
+                            <label>"Heart rate at rest"</label>
+                        </div>
+                        <div>
+                            <label>P2</label>
+                            <input class="inputs" name="p2" type="number" value="0" />
+                            <label>"Heart rate immediately at the end of the Ruffier test"</label>
+                        </div>
+                        <div>
+                            <label>P3</label>
+                            <input class="inputs" name="p3" type="number" value="0" />
+                            <label>"Heart rate one minute after"</label>
+                        </div>
                     </div>
-                    <div>
-                        <label>Height</label>
-                        <input name="h" type="number" value="0" />
-                        <label id="altura">"Meters"</label>
-                    </div>
-                    <div>
-                        <label>Weight</label>
-                        <input name="w" type="number" value="0" />
-                        <label id="peso">"Kilograms"</label>
-                    </div>
-                    <div>
-                        <label>Age</label>
-                        <input name="a" type="number" value="0" />
-                        <label>"Years"</label>
-                    </div>
-                    <div>
-                        <label>Sex</label>
-                        <select name="sex">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                        </select>
-                        <label>1 for men or 0 for women</label>
-                    </div>
-                    <div>
-                        <label>P1</label>
-                        <input name="p1" type="number" value="0" />
-                        <label>"Heart rate at rest"</label>
-                    </div>
-                    <div>
-                        <label>P2</label>
-                        <input name="p2" type="number" value="0" />
-                        <label>"Heart rate immediately at the end of the Ruffier test"</label>
-                    </div>
-                    <div>
-                        <label>P3</label>
-                        <input name="p3" type="number" value="0" />
-                        <label>"Heart rate one minute after"</label>
+                    <!--==========================================================================-->
+                    <!--    Metronome custom styles                                               -->
+                    <!--==========================================================================-->
+                    <div class="col-lg-4 col-md-4">
+                        <div id="gsbpm_metronome">
+                            <div class="metronome_body"></div>
+                            <div class="swinging_pendulum">
+                                <div></div>
+                            </div>
+                            <div class="scale">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="bpm-control">
+                                <label class="slow-down">-</label>
+                                <input type="text" value="45" class="bpm-input" />
+                                <label class="speed-up">+</label>
+                                <span>BPM</span>
+                            </div>
+                            <div class="metronome_switcher">
+                                <input type="checkbox" id="metronome_switcher" class="switcher hidden"/>
+                                <label for="metronome_switcher" class="switcher"></label>
+                            </div>
+                            <div class="options">
+                                <div class="n_beats_change"></div>
+                                <div class="per_measure">
+                                    <label for="ts-change">Beats per measure</label>
+                                    <select class="new_beats">
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4" selected>4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="beats">
+                                <div class="beatcount"></div>
+                                <div class="current_beat"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                    <!--Modave's formula -->
+                    <button class="btn btn-success" name="startRuffier" type="button" onclick="metronome_on()">Start Ruffier</button>
+                    <button class="btn btn-danger" name="stopRuffier" type="button" onclick="metronome_off()">Stop Ruffier</button>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <h2>Rest Period</h2>
+                    <h2>Time left = <label id="timer"></label><span> min</span></h2>
+                </div>
+                <!--Modave's formula -->
+                <div class="col-lg-12 col-md-12">
                     <h2>Formula</h2>
                     <h4>
                         <p>VO2max</p>
                         <div class="equals"> = </div>
-                        <p>[3.0143 + 1.1585 * </p>
-                        <p id="sex"><span style="color: blue"> sex</span></p>
+                        <p>[ 3.0143 + 1.1585 * </p>
+                        <p id="sex"><span style="color: #21c2f8">&nbsp;sex&nbsp;</span></p>
                         <p> - 0.0268 * (</p>
-                        <p id="p1"><span style="color: blue">P1</span></p>
+                        <p id="p1"><span style="color: #21c2f8">&nbsp;P1&nbsp;</span></p>
                         <p>/</p>
-                        <p id="height"><span style="color: blue">height</span></p>
+                        <p id="height"><span style="color: #21c2f8">&nbsp;height&nbsp;</span></p>
                         <p>) +118.7611 * ((</p>
-                        <p id="p2"><span style="color: blue">P2</span></p>
+                        <p id="p2"><span style="color: #21c2f8">&nbsp;P2&nbsp;</span></p>
                         <p> - </p>
-                        <p id="p3"><span style="color: blue">P3</span></p>
-                        <p>)/</p>
-                        <p id="age"><span style="color: blue">age</span></p>
-                        <p>^3)]/</p>
-                        <p id="weight"><span style="color: blue">weight </span></p>
-                        <p> * 1000</p>
+                        <p id="p3"><span style="color: #21c2f8">&nbsp;P3&nbsp;</span></p>
+                        <p>)&nbsp;/</p>
+                        <p id="age"><span style="color: #21c2f8">&nbsp;age</span></p>
+                        <p>^3)]&nbsp;/</p>
+                        <p id="weight"><span style="color: #21c2f8">&nbsp;weight&nbsp;</span></p>
+                        <p>&nbsp;*&nbsp;1000</p>
                     </h4>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -106,14 +171,20 @@
                     <p id="result"></p>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                    <button name="Ruffier" type="button" onclick="calcVO2max()">Start Ruffier</button>
+                    <button class="btn btn-success" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
                 </div>
             </form>
+        </div>
+        <div class="col-lg-12 col-md-12">
+            <center>
+                <h5>® reserved HOP 2017</h5>
+            </center>
         </div>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/main.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
