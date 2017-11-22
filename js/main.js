@@ -122,10 +122,13 @@ function seconds_perbeat() {
     var current_tempo = parseInt($(".bpm-input").val(), 10);
 
     // Min/Max Put Limits
-    if(current_tempo < 40) {
-        current_tempo = 40;
+    if(current_tempo < 30)
+    {
+        current_tempo = 30;
         $(".bpm-input").val(current_tempo);
-    } else if(current_tempo > 210) {
+    }
+    else if(current_tempo > 210)
+    {
         current_tempo = 210;
         $(".bpm-input").val(current_tempo);
     }
@@ -245,8 +248,8 @@ function metronome_on() {
     // Pendulum Stuff
     $('.swinging_pendulum').addClass('animate_pendulum');
     _interval = setInterval(function() {}, seconds_perbeat() * 1000);
-    setTime = setTimeout(metronome_switch, 30000);
-    startTimer = setTimeout(startTimerF,30002);
+    setTime = setTimeout(metronome_switch, 45000);
+    startTimer = setTimeout(startTimerF,45005);
 }
 
 // Switch off
