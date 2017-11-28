@@ -11,13 +11,8 @@
    ========================================================================== */
 
 html {
-    color: #fdf2ff;;
     font-size: 1em;
     line-height: 1.4;
-}
-
-body {
-    color: white;
 }
 
 button:hover {
@@ -30,6 +25,14 @@ button:hover {
 
 .inputs {
     margin-left: 10px;
+}
+
+.marginDown {
+    margin-bottom: 10px;
+}
+
+.jumbotron {
+    margin-left:3%;
 }
 
 /*
@@ -141,7 +144,7 @@ select, p, .equals {
 
 #gsbpm_metronome {
     bottom: 0;
-    height: 250px;
+    height: 500px;
     left: 0;
     margin: auto;
     top: 0;
