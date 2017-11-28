@@ -28,7 +28,7 @@
         <center>
             <h1>Welcome to VO2max</h1>
         </center>
-        <div class="col-lg-12 col-md-12">
+        <!--<div class="col-lg-12 col-md-12">-->
             <form id="calc" oninput="updateOutput()">
                 <!--input and output elements-->
                 <div class="col-lg-12 col-md-12">
@@ -134,47 +134,49 @@
                             <!--</div>-->
                         </div>
                     </div>
+                    <div class="col-lg-12 col-md-12">
+                        <button class="btn btn-success" name="startRuffier" type="button" onclick="metronome_on()">Start Ruffier</button>
+                        <button class="btn btn-danger" name="stopRuffier" type="button" onclick="metronome_off()">Stop Ruffier</button>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <h2>Rest Period</h2>
+                        <h2>Time left = <label id="timer"></label><span> min</span></h2>
+                    </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <button class="btn btn-success" name="startRuffier" type="button" onclick="metronome_on()">Start Ruffier</button>
-                    <button class="btn btn-danger" name="stopRuffier" type="button" onclick="metronome_off()">Stop Ruffier</button>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <h2>Rest Period</h2>
-                    <h2>Time left = <label id="timer"></label><span> min</span></h2>
-                </div>
+
                 <!--Modave's formula -->
+                <!--<div class="col-lg-12 col-md-12">-->
+                    <!--<h2>Formula</h2>-->
+                    <!--<h4>-->
+                        <!--<p>VO2max</p>-->
+                        <!--<div class="equals"> = </div>-->
+                        <!--<p>[ 3.0143 + 1.1585 * </p>-->
+                        <!--<p id="sex"><span style="color: #21c2f8">&nbsp;sex&nbsp;</span></p>-->
+                        <!--<p> - 0.0268 * (</p>-->
+                        <!--<p id="p1"><span style="color: #21c2f8">&nbsp;P1&nbsp;</span></p>-->
+                        <!--<p>/</p>-->
+                        <!--<p id="height"><span style="color: #21c2f8">&nbsp;height&nbsp;</span></p>-->
+                        <!--<p>) +118.7611 * ((</p>-->
+                        <!--<p id="p2"><span style="color: #21c2f8">&nbsp;P2&nbsp;</span></p>-->
+                        <!--<p> - </p>-->
+                        <!--<p id="p3"><span style="color: #21c2f8">&nbsp;P3&nbsp;</span></p>-->
+                        <!--<p>)&nbsp;/</p>-->
+                        <!--<p id="age"><span style="color: #21c2f8">&nbsp;age</span></p>-->
+                        <!--<p>^3)]&nbsp;/</p>-->
+                        <!--<p id="weight"><span style="color: #21c2f8">&nbsp;weight&nbsp;</span></p>-->
+                        <!--<p>&nbsp;*&nbsp;1000</p>-->
+                    <!--</h4>-->
+                <!--</div>-->
                 <div class="col-lg-12 col-md-12">
-                    <h2>Formula</h2>
-                    <h4>
-                        <p>VO2max</p>
-                        <div class="equals"> = </div>
-                        <p>[ 3.0143 + 1.1585 * </p>
-                        <p id="sex"><span style="color: #21c2f8">&nbsp;sex&nbsp;</span></p>
-                        <p> - 0.0268 * (</p>
-                        <p id="p1"><span style="color: #21c2f8">&nbsp;P1&nbsp;</span></p>
-                        <p>/</p>
-                        <p id="height"><span style="color: #21c2f8">&nbsp;height&nbsp;</span></p>
-                        <p>) +118.7611 * ((</p>
-                        <p id="p2"><span style="color: #21c2f8">&nbsp;P2&nbsp;</span></p>
-                        <p> - </p>
-                        <p id="p3"><span style="color: #21c2f8">&nbsp;P3&nbsp;</span></p>
-                        <p>)&nbsp;/</p>
-                        <p id="age"><span style="color: #21c2f8">&nbsp;age</span></p>
-                        <p>^3)]&nbsp;/</p>
-                        <p id="weight"><span style="color: #21c2f8">&nbsp;weight&nbsp;</span></p>
-                        <p>&nbsp;*&nbsp;1000</p>
-                    </h4>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <p class="equals"> = </p>
-                    <p id="result"></p>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <button class="btn btn-success" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
+                    <div class="col-lg-6 col-md-6">
+                        <h2 class="equals">= <label id="result"></label></h2>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <button class="btn btn-success" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
+                    </div>
                 </div>
             </form>
-        </div>
+        <!--</div>-->
         <div class="col-lg-12 col-md-12">
             <center>
                 <h5>® reserved HOP 2017</h5>

@@ -141,10 +141,9 @@ select, p, .equals {
 
 #gsbpm_metronome {
     bottom: 0;
-    height: 350px;
+    height: 250px;
     left: 0;
     margin: auto;
-    /*position: absolute;*/
     top: 0;
     right: 0;
     width: 300px;
