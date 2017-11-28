@@ -16,8 +16,6 @@
 
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional Bootstrap theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -31,14 +29,16 @@
         <div class="container-fluid">
             <div class="row content">
                 <div class="col-sm-8 jumbotron sidenav">
-                    <form id="calc" oninput="updateOutput()">
+                    <form id="calc">
+                    <!--If formula wanna be use uncomment this and substitute -->
+                    <!--<form id="calc" oninput="updateOutput()">-->
                         <div class="marginDown col-lg-12">
                             <!--input and output elements-->
                             <div>
                                 <label id="systemType">Metric System</label>
                                 <select class="selectors" name="system" onchange="updateSystemType()">
-                                    <option value="0">Yes</option>
-                                    <option value="1">No</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
                                 </select>
                             </div>
                             <div>
@@ -66,17 +66,17 @@
                             </div>
                             <div>
                                 <label>P1</label>
-                                <input class="inputs" name="p1" type="number" value="0" />
+                                <input class="inputs" name="P1" type="number" value="0" />
                                 <label>"Heart rate at rest"</label>
                             </div>
                             <div>
                                 <label>P2</label>
-                                <input class="inputs" name="p2" type="number" value="0" />
+                                <input class="inputs" name="P2" type="number" value="0" />
                                 <label>"Heart rate immediately at the end of the Ruffier test"</label>
                             </div>
                             <div>
                                 <label>P3</label>
-                                <input class="inputs" name="p3" type="number" value="0" />
+                                <input class="inputs" name="P3" type="number" value="0" />
                                 <label>"Heart rate one minute after"</label>
                             </div>
                         </div>
@@ -94,13 +94,13 @@
                                 <!--<p>[ 3.0143 + 1.1585 * </p>-->
                                 <!--<p id="sex"><span style="color: #21c2f8">&nbsp;sex&nbsp;</span></p>-->
                                 <!--<p> - 0.0268 * (</p>-->
-                                <!--<p id="p1"><span style="color: #21c2f8">&nbsp;P1&nbsp;</span></p>-->
+                                <!--<p id="P1"><span style="color: #21c2f8">&nbsp;P1&nbsp;</span></p>-->
                                 <!--<p>/</p>-->
                                 <!--<p id="height"><span style="color: #21c2f8">&nbsp;height&nbsp;</span></p>-->
                                 <!--<p>) +118.7611 * ((</p>-->
-                                <!--<p id="p2"><span style="color: #21c2f8">&nbsp;P2&nbsp;</span></p>-->
+                                <!--<p id="P2"><span style="color: #21c2f8">&nbsp;P2&nbsp;</span></p>-->
                                 <!--<p> - </p>-->
-                                <!--<p id="p3"><span style="color: #21c2f8">&nbsp;P3&nbsp;</span></p>-->
+                                <!--<p id="P3"><span style="color: #21c2f8">&nbsp;P3&nbsp;</span></p>-->
                                 <!--<p>)&nbsp;/</p>-->
                                 <!--<p id="age"><span style="color: #21c2f8">&nbsp;age</span></p>-->
                                 <!--<p>^3)]&nbsp;/</p>-->

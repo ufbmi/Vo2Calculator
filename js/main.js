@@ -1,14 +1,15 @@
 //get form
 var form = document.getElementById("calc");
-var systemValue = 0;
+var metric = 0;
 var setTime;
 var startTimer;
 
+// this function will deteted the system being use
 function updateSystemType() {
     // getting system value
-    systemValue = parseInt(form.elements["system"].value);
+    metric = parseInt(form.elements["system"].value);
 
-    if (systemValue == 0) {
+    if (metric == 0) {
         // Metric System was selected
         console.log("Metric System");
         document.getElementById("systemType").innerHTML = "Metric System";
@@ -19,7 +20,7 @@ function updateSystemType() {
         // Imperial System was selected
         console.log("Imperial System");
         document.getElementById("systemType").innerHTML = "Imperial System";
-        document.getElementById("altura").innerHTML = "Feet";
+        document.getElementById("altura").innerHTML = "Foot";
         document.getElementById("peso").innerHTML = "Pounds";
     }
 }
@@ -29,50 +30,48 @@ var sexValue = parseInt(form.elements["sex"].value);
 
 function calcVO2max() {
     //get all numbers
-    var height = parseInt(form.elements["h"].value);
-    var weight = parseInt(form.elements["w"].value);
+    var height = parseFloat(form.elements["h"].value);
+    var weight = parseFloat(form.elements["w"].value);
     var age = parseInt(form.elements["a"].value);
-    var p1 = parseInt(form.elements["p1"].value);
-    var p2 = parseInt(form.elements["p2"].value);
-    var p3 = parseInt(form.elements["p3"].value);
+    var P1 = parseInt(form.elements["P1"].value);
+    var P2 = parseInt(form.elements["P2"].value);
+    var P3 = parseInt(form.elements["P3"].value);
 
-    if (systemValue == 0) {
+    if (metric == 1) {
+        console.log("Imperial System was selected");
+
+        height = height * 0.3048;
+        weight = weight * 0.4536;
+
+        console.log("height " + height);
+        console.log("weight " + weight);
+    }
+    // for development purpose only, this could be delete after the app is tested
+    else {
+        console.log("Metric System was selected");
         // Metric System was selected
         console.log("height " + height);
         console.log("weight " + weight);
         console.log("age " + age);
 
-
-        console.log("Metric System was selected");
-
-        // formula
-        var result = [3.0143 + 1.1585 * sexValue - 0.0268 * (p1/height) +118.7611 * ((p2 - p3)/age^3)]/weight * 1000;
-
-        document.getElementById("result").innerHTML = result.toString();
-
-        console.log("this is result " + result.toString());
     }
-    else {
-        /*<==========================================================================
-                Formula needs to be fix for imperial system
-        <==========================================================================*/
-        console.log("Imperial System was selected");
+    // delete up to this line
 
-        var result = [3.0143 + 1.1585 * sexValue - 0.0268 * (p1/height) +118.7611 * ((p2 - p3)/age^3)]/weight * 1000;
+    // Modave's formula
+    var result = 3.0143 + 1.1585 * sexValue - 0.0268 * (P1/height) +118.7611 * [(P2 - P3)/age^3]/weight * 1000;
 
-        document.getElementById("result").innerHTML = result.toString();
+    document.getElementById("result").innerHTML = result.toString();
 
-        console.log("this is result " + result.toString());
-    }
+    console.log("this is result " + result.toString());
 }
 
 
 function updateOutput() {
     document.getElementById("sex").innerHTML = form.elements["sex"].value;
-    document.getElementById("p1").innerHTML = form.elements["p1"].value;
+    document.getElementById("P1").innerHTML = form.elements["P1"].value;
     document.getElementById("height").innerHTML = form.elements["h"].value;
-    document.getElementById("p2").innerHTML = form.elements["p2"].value;
-    document.getElementById("p3").innerHTML = form.elements["p3"].value;
+    document.getElementById("P2").innerHTML = form.elements["P2"].value;
+    document.getElementById("P3").innerHTML = form.elements["P3"].value;
     document.getElementById("age").innerHTML = form.elements["a"].value;
     document.getElementById("weight").innerHTML = form.elements["w"].value;
 }
