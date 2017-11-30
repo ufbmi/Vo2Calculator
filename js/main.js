@@ -65,7 +65,12 @@ function calcVO2max() {
     console.log("this is result " + result.toString());
 }
 
+function resetTest() {
+    metronome_off();
 
+}
+
+// this function is use to show in real time how the formula value gets filled
 function updateOutput() {
     document.getElementById("sex").innerHTML = form.elements["sex"].value;
     document.getElementById("P1").innerHTML = form.elements["P1"].value;
@@ -121,9 +126,9 @@ function seconds_perbeat() {
     var current_tempo = parseInt($(".bpm-input").val(), 10);
 
     // Min/Max Put Limits
-    if(current_tempo < 30)
+    if(current_tempo < 38)
     {
-        current_tempo = 30;
+        current_tempo = 38;
         $(".bpm-input").val(current_tempo);
     }
     else if(current_tempo > 210)
@@ -152,10 +157,11 @@ function playNote(t) {
         note.frequency.value = 380;
         var bgcolor = "19FA65";
         var first_beat = true;
-    } else {
-        note.frequency.value = 200;
-        var bgcolor = "01C0F1";
     }
+    // else {
+    //     note.frequency.value = 200;
+    //     var bgcolor = "01C0F1";
+    // }
 
     note.connect(context.destination);
 
@@ -248,13 +254,15 @@ function metronome_on() {
     $('.swinging_pendulum').addClass('animate_pendulum');
     _interval = setInterval(function() {}, seconds_perbeat() * 1000);
     setTime = setTimeout(metronome_switch, 45000);
-    startTimer = setTimeout(startTimerF,45005);
+    startTimer = setTimeout(startTimerF,45001);
 }
 
 // Switch off
 function metronome_off() {
     counting = false;
     window.clearInterval(timer);
+    window.clearTimeout(setTime);
+    window.clearTimeout(startTimer);
 
     $("#metronome_switcher").prop( "checked", false );
     $(".beatcount .beat").attr("style", "");
