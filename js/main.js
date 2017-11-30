@@ -65,9 +65,10 @@ function calcVO2max() {
     console.log("this is result " + result.toString());
 }
 
+// resetting the whole test and clearing the form
 function resetTest() {
     metronome_off();
-
+    document.getElementById("calc").reset();
 }
 
 // this function is use to show in real time how the formula value gets filled
