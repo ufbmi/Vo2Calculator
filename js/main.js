@@ -2,7 +2,7 @@
 var form = document.getElementById("calc");
 var metric = 0;
 var setTime;
-var startTimer;
+// var startTimer;
 
 // this function will deteted the system being use
 function updateSystemType() {
@@ -60,16 +60,16 @@ function calcVO2max() {
     // Modave's formula
     var result = 3.0143 + 1.1585 * sexValue - 0.0268 * (P1/height) +118.7611 * [(P2 - P3)/age^3]/weight * 1000;
 
-    document.getElementById("result").innerHTML = result.toString();
+    document.getElementById("result").innerHTML = result.toFixed(2).toString();
 
     console.log("this is result " + result.toString());
 }
 
 // resetting the whole test and clearing the form
-function resetTest() {
-    metronome_off();
-    document.getElementById("calc").reset();
-}
+// function resetTest() {
+//     metronome_off();
+//     document.getElementById("calc").reset();
+// }
 
 // this function is use to show in real time how the formula value gets filled
 function updateOutput() {
@@ -255,7 +255,7 @@ function metronome_on() {
     $('.swinging_pendulum').addClass('animate_pendulum');
     _interval = setInterval(function() {}, seconds_perbeat() * 1000);
     setTime = setTimeout(metronome_switch, 45000);
-    startTimer = setTimeout(startTimerF,45001);
+    // startTimer = setTimeout(startTimerF, 5005);
 }
 
 // Switch off
@@ -263,7 +263,7 @@ function metronome_off() {
     counting = false;
     window.clearInterval(timer);
     window.clearTimeout(setTime);
-    window.clearTimeout(startTimer);
+    // window.clearTimeout(startTimer);
 
     $("#metronome_switcher").prop( "checked", false );
     $(".beatcount .beat").attr("style", "");
@@ -341,10 +341,8 @@ function startTimerF() {
     }
     else {
         document.getElementById('timer').innerHTML = m + ":" + s;
-        setTimeout(startTimerF, 1000);
+        setTimeout(startTimerF, 1500);
     }
-
-
 }
 
 function checkSecond(sec) {
@@ -360,5 +358,5 @@ function checkSecond(sec) {
 }
 
 function stopTimerF() {
-    document.getElementById('timer').innerHTML = 01 + ":" + 00;
+    location.reload();
 }
