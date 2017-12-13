@@ -1,20 +1,32 @@
 //get form
 var form = document.getElementById("calc");
-var metric = 0;
+var systemType = 0;
 var setTime;
 // var startTimer;
 
-// this function will deteted the system being use
+// this function will detect the system being use
 function updateSystemType() {
-    // getting system value
-    metric = parseInt(form.elements["system"].value);
+    // getting system type 0 Metric System or 1 for Imperial
+    systemType = parseInt(form.elements["system"].value);
 
-    if (metric == 0) {
+    // height and weight
+    var height = parseFloat(form.elements["h"].value);
+    var weight = parseFloat(form.elements["w"].value);
+
+    if (systemType == 0) {
         // Metric System was selected
         console.log("Metric System");
         document.getElementById("systemType").innerHTML = "Metric System";
-        document.getElementById("altura").innerHTML = "Meters";
+        document.getElementById("altura").innerHTML = "Centimeters";
         document.getElementById("peso").innerHTML = "Kilograms";
+
+        // updating values to be display in metric system from imperial
+        if (height || weight !== 0) {
+            // display from inches to centimeters
+            form.elements["h"].value = (height * 2.54 + 0.01).toFixed(2);
+            // display from pounds to kg
+            form.elements["w"].value = (weight * 0.453592).toFixed(2);
+        }
     }
     else {
         // Imperial System was selected
@@ -22,14 +34,22 @@ function updateSystemType() {
         document.getElementById("systemType").innerHTML = "Imperial System";
         document.getElementById("altura").innerHTML = "Inches";
         document.getElementById("peso").innerHTML = "Pounds";
+
+        // updating values to be display in imperial system from metric
+        if (height || weight !== 0) {
+            // display from centimeters to inches
+            form.elements["h"].value = (height * 0.393701).toFixed(2);
+            // display from kg to pounds
+            form.elements["w"].value = (weight * 2.20462).toFixed(2);
+        }
     }
 }
 
-// getting sex value
-var sexValue = parseInt(form.elements["sex"].value);
+
 
 function calcVO2max() {
     //get all numbers
+    var sexValue = parseInt(form.elements["sex"].value);
     var height = parseFloat(form.elements["h"].value);
     var weight = parseFloat(form.elements["w"].value);
     var age = parseInt(form.elements["a"].value);
@@ -37,39 +57,44 @@ function calcVO2max() {
     var P2 = parseInt(form.elements["P2"].value);
     var P3 = parseInt(form.elements["P3"].value);
 
-    if (metric == 1) {
-        console.log("Imperial System was selected");
-
-        height = height * 0.3048;
-        weight = weight * 0.4536;
-
-        console.log("height " + height);
-        console.log("weight " + weight);
-    }
-    // for development purpose only, this could be delete after the app is tested
-    else {
-        console.log("Metric System was selected");
+    // 0 Metric System or 1 for Imperial
+    if (systemType == 0) {
         // Metric System was selected
-        console.log("height " + height);
-        console.log("weight " + weight);
-        console.log("age " + age);
+        console.log("Metric System was selected");
+        // from centimeters to meters
+        height = height / 100;
+        console.log("height in meters " + height);
+        console.log("weight in kg " + weight);
+    }
+    else {
+        // Imperial System was selected
+        console.log("Imperial System was selected");
+        // from inches to meters
+        height = height * 0.0254;
+        // from pounds to kilograms
+        weight = weight * 0.453592;
+        console.log("height in meters " + height);
+        console.log("weight in kg " + weight);
 
     }
-    // delete up to this line
+
+    console.log("age in years " + age);
+    console.log("sex value " + sexValue);
+    console.log("p1 " + P1);
+    console.log("p2 " + P2);
+    console.log("p3 " + P3);
+
+    var age3 = Math.pow(age, 3);
+    console.log("age^3 " + age3);
+
 
     // Modave's formula
-    var result = 3.0143 + 1.1585 * sexValue - 0.0268 * (P1/height) +118.7611 * [(P2 - P3)/age^3]/weight * 1000;
+    var result = [3.0143 + 1.1585 * sexValue - 0.0268 * (P1/height) + 118.7611 * ((P2 - P3)/age3)]/weight * 1000;
 
     document.getElementById("result").innerHTML = result.toFixed(2).toString();
 
     console.log("this is result " + result.toString());
 }
-
-// resetting the whole test and clearing the form
-// function resetTest() {
-//     metronome_off();
-//     document.getElementById("calc").reset();
-// }
 
 // this function is use to show in real time how the formula value gets filled
 function updateOutput() {
