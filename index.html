@@ -24,7 +24,7 @@
 
         <!-- Add your site or application content here -->
         <center>
-            <h1>Welcome to VO2max</h1>
+            <h1>Cardiorespiratory Fitness Predictor</h1>
         </center>
         <div class="container-fluid">
             <div class="row content">
@@ -44,17 +44,17 @@
                             <div>
                                 <label>Height</label>
                                 <input class="inputs" name="h" type="number" value="0" />
-                                <label id="altura">"Meters"</label>
+                                <label id="altura">Centimeters</label>
                             </div>
                             <div>
                                 <label>Weight</label>
                                 <input class="inputs" name="w" type="number" value="0" />
-                                <label id="peso">"Kilograms"</label>
+                                <label id="peso">Kilograms</label>
                             </div>
                             <div>
                                 <label>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                 <input class="inputs" name="a" type="number" value="0" />
-                                <label>"Years"</label>
+                                <label>Years</label>
                             </div>
                             <div>
                                 <label>Sex</label>
@@ -67,21 +67,21 @@
                             <div>
                                 <label>P1</label>
                                 <input class="inputs" name="P1" type="number" value="0" />
-                                <label>"Heart rate at rest"</label>
+                                <label>Heart rate at rest</label>
                             </div>
                             <div>
                                 <label>P2</label>
                                 <input class="inputs" name="P2" type="number" value="0" />
-                                <label>"Heart rate immediately at the end of the Ruffier test"</label>
+                                <label>Heart rate immediately at the end of the Ruffier test</label>
                             </div>
                             <div>
                                 <label>P3</label>
                                 <input class="inputs" name="P3" type="number" value="0" />
-                                <label>"Heart rate one minute after"</label>
+                                <label>Heart rate one minute after</label>
                             </div>
                         </div>
                         <div class="marginDown col-lg-12">
-                        <button class="btn btn-success" name="startRuffier" type="button" onclick="metronome_on()">Start Ruffier</button>
+                        <button id="startRuffier" class="btn btn-success" name="startRuffier" type="button" onclick="metronome_on()">Start Ruffier</button>
                         <button class="btn btn-danger" name="stopRuffier" type="button" onclick="metronome_off()">Stop Ruffier</button>
                         <h2>Rest Period</h2>
                         <button class="btn btn-success" name="startRest" type="button" onclick="startTimerF()">Start Rest</button>

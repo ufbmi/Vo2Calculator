@@ -20,7 +20,7 @@ function updateSystemType() {
         // Imperial System was selected
         console.log("Imperial System");
         document.getElementById("systemType").innerHTML = "Imperial System";
-        document.getElementById("altura").innerHTML = "Foot";
+        document.getElementById("altura").innerHTML = "Inches";
         document.getElementById("peso").innerHTML = "Pounds";
     }
 }
@@ -256,6 +256,8 @@ function metronome_on() {
     _interval = setInterval(function() {}, seconds_perbeat() * 1000);
     setTime = setTimeout(metronome_switch, 45000);
     // startTimer = setTimeout(startTimerF, 5005);
+    // disable the start button
+    document.getElementById("startRuffier").disabled = true;
 }
 
 // Switch off
@@ -273,6 +275,8 @@ function metronome_off() {
     $('.swinging_pendulum').removeClass('animate_pendulum');
     clearInterval(_interval);
     _interval = null;
+    // enable button
+    document.getElementById("startRuffier").disabled = false;
 }
 
 // Beats per measure
