@@ -49,6 +49,7 @@ function updateSystemType() {
 
 function calcVO2max() {
     //get all numbers
+    //  [3.0143 + 1.1585 x sex – 0.0268 x (P1/height) + 118.7611 x [(P2-P3)/age^3] / weight x 1000
     var sexValue = parseInt(form.elements["sex"].value);
     var height = parseFloat(form.elements["h"].value);
     var weight = parseFloat(form.elements["w"].value);
