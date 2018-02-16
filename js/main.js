@@ -187,27 +187,6 @@ function changeWholeTime(seconds){
   }
 }
 
-for (var i = 0; i < setterBtns.length; i++) {
-    setterBtns[i].addEventListener("click", function(event) {
-        var param = this.dataset.setter;
-        switch (param) {
-            case 'minutes-plus':
-                changeWholeTime(1 * 60);
-                break;
-            case 'minutes-minus':
-                changeWholeTime(-1 * 60);
-                break;
-            case 'seconds-plus':
-                changeWholeTime(5);
-                break;
-            case 'seconds-minus':
-                changeWholeTime(-5);
-                break;
-        }
-      displayTimeLeft(wholeTime);
-    });
-}
-
 function timer (seconds){ //counts time, takes seconds
   let remainTime = Date.now() + (seconds * 1000);
   displayTimeLeft(seconds);

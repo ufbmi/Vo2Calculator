@@ -253,13 +253,6 @@ button[data-setter]:hover {
     left: 80px;
     top: 75px;
 }
-.minutes-set {
-    float: left;
-    margin-right: 28px;
-}
-.seconds-set {
-    float: right;
-}
 .controlls {
     position: absolute;
     left: 70px;
@@ -329,6 +322,50 @@ button[data-setter]:hover {
 
 /*END Simple Timer CSS*/
 
+/*Buttons*/
+button {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 180px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px 50px;
+}
+
+.button1 {
+    color: rgba(30, 22, 54, 0.6);
+    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.button1:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+.button2 {
+    color: rgba(30, 22, 54, 0.6);
+    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.button2:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+}
+
+.button3 {
+    color: black;
+    box-shadow: #2dcfc5 0 0px 0px 2px inset;
+}
+
+.button3:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: #2db2cf 0 80px 0px 2px inset;
+}
 
 /*Form CSS*/
 

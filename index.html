@@ -24,7 +24,7 @@
 
         <!-- Add your site or application content here -->
         <center>
-            <h1>Cardiorespiratory Fitness Predictor</h1>
+            <h1><b>Cardiorespiratory Fitness Predictor</b></h1>
         </center>
         <div class="container-fluid">
             <div class="row content">
@@ -45,17 +45,17 @@
                             </div>
                             <div class="form-item">
                                 <label>Height</label>
-                                <input class="inputs" name="h" type="number" value="0" />
+                                <input class="inputs" name="h" type="number" placeholder="0" />
                                 <label id="altura">  Centimeters</label>
                             </div>
                             <div class="form-item">
                                 <label>Weight</label>
-                                <input class="inputs" name="w" type="number" value="0" />
+                                <input class="inputs" name="w" type="number" placeholder="0" />
                                 <label id="peso">  Kilograms</label>
                             </div>
                             <div class="form-item">
                                 <label>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <input class="inputs" name="a" type="number" value="0" />
+                                <input class="inputs" name="a" type="number" placeholder="0" />
                                 <label>  Years</label>
                             </div>
                             <div>
@@ -70,30 +70,30 @@
                             <div class="form-item">
                                 <h4><b>Heart rate at rest</b></h4>
                                 <label>P1</label>
-                                <input class="inputs" name="P1" type="number" value="0" />
+                                <input class="inputs" name="P1" type="number" placeholder="0"/>
                             </div>
                             <div class="form-item">
                                 <h4><b>Heart rate immediately at the end of the Ruffier test</b></h4>
                                 <label>P2</label>
-                                <input class="inputs" name="P2" type="number" value="0" />
+                                <input class="inputs" name="P2" type="number" placeholder="0" />
                             </div>
                             <div class="form-item">
                                 <h4><b>Heart rate one minute after</b></h4>
                                 <div class="section-header-underline"></div>
                                 <label>P3</label>
-                                <input class="inputs" name="P3" type="number" value="0" />
+                                <input class="inputs" name="P3" type="number" placeholder="0"/>
                             </div>
                         </div>
                         <div class="marginDown col-lg-12">
         
                         <h2>Rest Period</h2>
-                        <button class="btn btn-success" name="startRest" type="button" onclick="startTimerF()">Start Rest</button>
-                        <button class="btn btn-danger" name="stopRest" type="button" onclick="stopTimerF()">Reset Rest</button>
+                        <button class="button1" name="startRest" type="button" onclick="startTimerF()">Start Rest</button>
+                        <button class="button2" name="stopRest" type="button" onclick="stopTimerF()">Reset Rest</button>
                         <h2>Time left = <label id="timer"></label><span> min</span></h2>
                         </div>
                         <div class="marginDown col-lg-12">
                             <div class="row col-lg-10 col-md-10">
-                                <button class="btn btn-success col-lg-4 col-md-4" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
+                                <button class="button3 col-lg-4 col-md-4" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
                                 <h2 class="result col-lg-6 col-md-6">= <label id="result"></label></h2>
                             </div>
                         </div>
@@ -101,16 +101,6 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="timerContainer">
-                      <!-- <div class="setters">
-                        <div class="minutes-set">
-                          <button data-setter="minutes-plus">+</button>
-                          <button data-setter="minutes-minus">-</button>
-                        </div>
-                        <div class="seconds-set">
-                          <button data-setter="seconds-plus">+</button>
-                          <button data-setter="seconds-minus">-</button>
-                        </div>
-                      </div> -->
                        <div class="circle">
                           <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
                              <g transform="translate(110,110)">
@@ -125,7 +115,7 @@
                           </svg>
                        </div>
                        <div class="controlls">
-                          <div class="display-remain-time">00:30</div>
+                          <div class="display-remain-time">00:45</div>
                           <button class="play" id="pause"></button>
                        </div>
                     </div>
