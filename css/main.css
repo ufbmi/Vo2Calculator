@@ -18,19 +18,49 @@ html {
     background-color: none;
 }
 
-h1{
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: inherit;
-}
-
 * {
     font-family: 'Open Sans','Roboto';
     background-color: #fafafa;
 }
 
+#til{
+  text-align: center;
+  font-family: 'Open Sans','Roboto';
+    color:#dedede;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #141414;
+}
+
+h1 {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 15px 20px;
+  position: relative;
+}
+
+h1:after { 
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0px;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+h1:hover:after {
+  width: 100%; 
+  left: 0; 
+}
+
 button:hover {
-    cursor:pointer;
+  cursor:pointer;
 }
 
 .selectors {
@@ -248,7 +278,7 @@ button[data-setter]:hover {
 }
 .timerContainer {
     position: relative;
-    top: 10px;
+    top: 30px;
     width: 300px;
     margin-right: 250px;
 }
