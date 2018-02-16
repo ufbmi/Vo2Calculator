@@ -9,9 +9,8 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
-
 
 html {
     font-size: 1.5em;
@@ -26,7 +25,7 @@ h1{
 }
 
 * {
-    font-family: 'Roboto';
+    font-family: 'Open Sans','Roboto';
     background-color: #fafafa;
 }
 
@@ -367,6 +366,67 @@ form {
 }
 
 /*End Form CSS*/
+
+/*Radio btn CSS*/
+.radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.radio-custom-label {
+    position: relative;
+}
+
+.radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+    background: #ccc;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+
+.radio-custom:focus + .radio-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}
+
+/*End radio tn CSS*/
+
+/*Underline Header*/
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  /*display: inline-block;*/
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 0.1px #969292;
+  box-shadow: inset 0 -1.5px 0 #969292;
+  color: inherit;
+  width: 85%;
+  /*transition: background 0.1s cubic-bezier(.33,.66,.66,1);*/
+}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.

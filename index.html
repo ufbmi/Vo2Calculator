@@ -34,11 +34,14 @@
                         <div class="marginDown ">
                             <!--input and output elements-->
                             <div class="form-item">
-                                <label id="systemType">0 Metric System or 1 for Imperial</label>
-                                <select class="selectors" name="system" onchange="updateSystemType()">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select>
+                                <h4 id="systemType"><b>Please Choose Measuring System</b></h4>
+                                <div class="section-header-underline"></div>
+                                <div>
+                                    <input id="radio-1" class="radio-custom" name="system" value="0" type="radio" checked onclick = "updateSystemType()">
+                                    <label for="radio-1" class="radio-custom-label">Metric System</label>
+                                    <input id="radio-2" class="radio-custom" name="system" value="1" type="radio" onclick = "updateSystemType()">
+                                    <label for="radio-2" class="radio-custom-label">Imperial System</label>
+                                </div>
                             </div>
                             <div class="form-item">
                                 <label>Height</label>
@@ -56,27 +59,29 @@
                                 <label>  Years</label>
                             </div>
                             <div>
-                                <label>Sex</label>
-                                <select class="selectors" name="sex">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select>
-                                <label>1 for men or 0 for women</label>
+                                <h4><b>Please Choose Your Gender</b></h4>
+                                <div>
+                                    <input id="radio-3" class="radio-custom" name="sex" value="1" type="radio" checked>
+                                    <label for="radio-3" class="radio-custom-label">Male</label>
+                                    <input id="radio-4" class="radio-custom" name="sex" value="0" type="radio">
+                                    <label for="radio-4" class="radio-custom-label">Female</label>
+                                </div>
                             </div>
                             <div class="form-item">
+                                <h4><b>Heart rate at rest</b></h4>
                                 <label>P1</label>
                                 <input class="inputs" name="P1" type="number" value="0" />
-                                <label>Heart rate at rest</label>
                             </div>
                             <div class="form-item">
+                                <h4><b>Heart rate immediately at the end of the Ruffier test</b></h4>
                                 <label>P2</label>
                                 <input class="inputs" name="P2" type="number" value="0" />
-                                <label>Heart rate immediately at the end of the Ruffier test</label>
                             </div>
                             <div class="form-item">
+                                <h4><b>Heart rate one minute after</b></h4>
+                                <div class="section-header-underline"></div>
                                 <label>P3</label>
                                 <input class="inputs" name="P3" type="number" value="0" />
-                                <label>Heart rate one minute after</label>
                             </div>
                         </div>
                         <div class="marginDown col-lg-12">
