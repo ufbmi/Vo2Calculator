@@ -21,7 +21,7 @@ html {
 h1{
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: white;
+    background-color: inherit;
 }
 
 * {
@@ -248,7 +248,7 @@ button[data-setter]:hover {
 }
 .timerContainer {
     position: relative;
-    top: 70px;
+    top: 10px;
     width: 300px;
     margin-right: 250px;
 }
@@ -323,7 +323,6 @@ button[data-setter]:hover {
 #e-pointer {
     transition: transform 0.7s;
 }
-
 /*END Simple Timer CSS*/
 
 /*Buttons*/

@@ -84,22 +84,10 @@
                                 <input class="inputs" name="P3" type="number" placeholder="N/A"/>
                             </div>
                         </div>
-                        <div class="marginDown ">
-        
-                        <h3><b>Rest Period</b></h3>
-                        <button class="button1" name="startRest" type="button" onclick="startTimerF()">Start Rest</button>
-                        <button class="button2" name="stopRest" type="button" onclick="stopTimerF()">Reset Rest</button>
-                        <h3><b>Time left : <label id="timer"></label><span> min</span></b></h3>
-                        </div>
-                        <div class="marginDown">
-                            <div class="row col-lg-10 col-md-10">
-                                <button class="button3 col-lg-4 col-md-4" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
-                                <h2 class="result col-lg-6 col-md-6">= <label id="result"></label></h2>
-                            </div>
-                        </div>
+                     
                     </form>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="timerContainer">
                        <div class="circle">
                           <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +107,21 @@
                           <button class="play" id="pause"></button>
                        </div>
                     </div>
-                </div>
+                    <!-- Rest and Cal Buttons -->
+                    <div class="marginDown">
+                        <br><br>
+                        <h3><b>Rest Period</b></h3>
+                        <button class="button1" name="startRest" type="button" onclick="startTimerF()">Start Rest</button>
+                        <button class="button2" name="stopRest" type="button" onclick="stopTimerF()">Reset Rest</button>
+                        <h3 ><b>Time left : <label id="timer"></label><span> min</span></b></h3>
+                    </div>
+                        <div class="marginDown">
+                            <div class="row col-lg-12 col-md-12">
+                                <button class="button3 col-lg-6 col-md-6" name="calcVO2Max" type="button" onclick="calcVO2max()">Calc VO2max</button>
+                                <h2 class="result col-lg-6 col-md-6">= <label id="result"></label></h2>
+                            </div>
+                        </div>   
+                    </div>
             </div>
         </div>
         <footer class="container-fluid">
