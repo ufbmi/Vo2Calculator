@@ -16,7 +16,7 @@ function updateSystemType() {
     if (systemType == 0) {
         // Metric System was selected
         console.log("Metric System");
-        document.getElementById("systemType").innerHTML = "Metric System";
+        document.getElementById("systemType").innerHTML = "<b>Metric System</b>";
         document.getElementById("altura").innerHTML = "Centimeters";
         document.getElementById("peso").innerHTML = "Kilograms";
 
@@ -31,7 +31,7 @@ function updateSystemType() {
     else {
         // Imperial System was selected
         console.log("Imperial System");
-        document.getElementById("systemType").innerHTML = "Imperial System";
+        document.getElementById("systemType").innerHTML = "<b>Imperial System</b>";
         document.getElementById("altura").innerHTML = "Inches";
         document.getElementById("peso").innerHTML = "Pounds";
 
