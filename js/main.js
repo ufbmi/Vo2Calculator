@@ -190,13 +190,7 @@ function timer (seconds){ //counts time, takes seconds
   displayTimeLeft(seconds);
   
   intervalTimer = setInterval(function(){
-    timeLeft = Math.round((remainTime - Date.now()) / 1000);
-    if(timeLeft < 46) {
-        tickAudio.pause()
-        tickAudio.currentTime = 0
-        tickAudio.play() 
-    }  
-    console.log("timeleft -> ", timeLeft);
+    timeLeft = Math.round((remainTime - Date.now()) / 1000); 
     if(timeLeft < 0) {
       clearInterval(intervalTimer);
       isStarted = false;
@@ -210,7 +204,9 @@ function timer (seconds){ //counts time, takes seconds
       return ;
     }
     displayTimeLeft(timeLeft);
-
+    tickAudio.pause();
+    tickAudio.currentTime = 0;
+    tickAudio.play();
   }, 1000);
 }
 function pauseTimer(event){
