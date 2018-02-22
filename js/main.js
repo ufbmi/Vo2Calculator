@@ -2,6 +2,7 @@
 var form = document.getElementById("calc");
 var systemType = 0;
 var setTime;
+var tickAudio = new Audio("sound/tick.mp3");
 // var startTimer;
 
 // this function will detect the system being use
@@ -44,8 +45,6 @@ function updateSystemType() {
         }
     }
 }
-
-
 
 function calcVO2max() {
     //get all numbers
@@ -148,7 +147,6 @@ function stopTimerF() {
     location.reload();
 }
 
-
 // Simple Timer
 
 //circle start
@@ -182,7 +180,7 @@ displayTimeLeft(wholeTime);
 
 function changeWholeTime(seconds){
   if ((wholeTime + seconds) > 0){
-    wholeTime += seconds;
+    wholeTime += seconds;            
     update(wholeTime,wholeTime);
   }
 }
@@ -193,7 +191,13 @@ function timer (seconds){ //counts time, takes seconds
   
   intervalTimer = setInterval(function(){
     timeLeft = Math.round((remainTime - Date.now()) / 1000);
-    if(timeLeft < 0){
+    if(timeLeft < 46) {
+        tickAudio.pause()
+        tickAudio.currentTime = 0
+        tickAudio.play() 
+    }  
+    console.log("timeleft -> ", timeLeft);
+    if(timeLeft < 0) {
       clearInterval(intervalTimer);
       isStarted = false;
       setterBtns.forEach(function(btn){
@@ -206,6 +210,7 @@ function timer (seconds){ //counts time, takes seconds
       return ;
     }
     displayTimeLeft(timeLeft);
+
   }, 1000);
 }
 function pauseTimer(event){

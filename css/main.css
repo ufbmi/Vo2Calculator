@@ -260,6 +260,10 @@ select, p, .equals {
 }
 
 /*Simple Timer CSS*/
+#timer-beep {
+  position: absolute;
+  top: -100000em;
+}
 
 button[data-setter] {
     outline: none;
